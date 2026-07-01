@@ -1,0 +1,40 @@
+{
+	"name": "@crazygl/hero-before-after-slider",
+	"version": "0.1.0",
+	"description": "Cinematic Before / After Slider — two images or videos blended across a glowing, draggable glass divider with chromatic refraction and parallax.",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./metadata.json": "./metadata.json",
+		"./style.css": "./style.css"
+	},
+	"files": [
+		"dist",
+		"metadata.json",
+		"style.css",
+		"LICENSE"
+	],
+	"dependencies": {
+		"@crazygl/core": "^0.1.0"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"license": "Apache-2.0",
+	"author": "ybouane",
+	"homepage": "https://crazygl.com/hero/before-after-slider",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/crazygl-com/hero-before-after-slider.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

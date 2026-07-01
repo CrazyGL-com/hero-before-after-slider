@@ -1,0 +1,278 @@
+{
+  "name": "Cinematic Before / After Slider",
+  "slug": "before-after-slider",
+  "version": 1,
+  "description": "Two images or videos blended in 3D across a glowing, draggable glass divider. The split refracts the scene with a chromatic edge, the whole plane tilts on pointer parallax, and corner labels call out before and after \u2014 a transformation showcase for AI enhancement, photo and video editing, design tools, and beauty tech.",
+  "dependencies": [],
+  "authorName": "@ybouane",
+  "authorUrl": "https://x.com/ybouane",
+  "tags": [
+    "before-after",
+    "comparison",
+    "glass",
+    "refraction",
+    "slider",
+    "transformation",
+    "premium"
+  ],
+  "category": "Premium",
+  "featured": false,
+  "poster": "/images/heroes/before-after-slider.png",
+  "install": {
+    "package": "@crazygl/hero-before-after-slider"
+  },
+  "config": {
+    "managedWidth": true,
+    "innerWidth": 1100,
+    "managedHeight": true,
+    "defaultHeight": 720,
+    "styleInheritance": "none",
+    "usesCanvas": true,
+    "usesWebGL": true,
+    "usesThree": false,
+    "pointerTracking": true,
+    "resizeTracking": true,
+    "scrollTracking": false,
+    "supportsImages": true,
+    "interactive": true,
+    "supportsFontCustomization": true,
+    "interactivityModes": [
+      "pointer",
+      "none"
+    ],
+    "interactivity": "pointer"
+  },
+  "customizer": {
+    "sections": [
+      {
+        "label": "Content",
+        "fields": [
+          {
+            "id": "contentType",
+            "label": "Content Type",
+            "type": "select",
+            "default": "heading",
+            "options": [
+              {
+                "label": "Heading",
+                "value": "heading"
+              },
+              {
+                "label": "Two Columns",
+                "value": "two-columns"
+              },
+              {
+                "label": "Custom",
+                "value": "custom"
+              }
+            ]
+          },
+          {
+            "id": "heading",
+            "label": "Heading",
+            "type": "text",
+            "default": "See the difference.",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          },
+          {
+            "id": "subheading",
+            "label": "Subheading",
+            "type": "textarea",
+            "default": "Move your cursor across the hero to reveal the transformation. Real refraction bends the scene through a glowing glass split.",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          },
+          {
+            "id": "column1",
+            "label": "Column 1",
+            "type": "node",
+            "default": "<h2>Before</h2><p>The raw input, untouched.</p>",
+            "showWhen": {
+              "contentType": "two-columns"
+            }
+          },
+          {
+            "id": "column2",
+            "label": "Column 2",
+            "type": "node",
+            "default": "<h2>After</h2><p>Enhanced, graded, finished.</p>",
+            "showWhen": {
+              "contentType": "two-columns"
+            }
+          },
+          {
+            "id": "content",
+            "label": "Content",
+            "type": "node",
+            "default": "<h1>See the difference.</h1>",
+            "showWhen": {
+              "contentType": "custom"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Media",
+        "fields": [
+          {
+            "id": "beforeMedia",
+            "label": "Before media",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature1.avif",
+            "description": "The 'before' side. Any photo or video (AVIF / WebP / PNG / JPG / MP4 / WebM). Cover-fitted so it never stretches."
+          },
+          {
+            "id": "afterMedia",
+            "label": "After media",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature3.avif",
+            "description": "The 'after' side. Any photo or video. Pick a richer / enhanced-looking asset so the transformation reads."
+          },
+          {
+            "id": "beforeLabel",
+            "label": "Before label",
+            "type": "text",
+            "default": "BEFORE",
+            "description": "Corner tag on the before side. Empty hides it."
+          },
+          {
+            "id": "afterLabel",
+            "label": "After label",
+            "type": "text",
+            "default": "AFTER",
+            "description": "Corner tag on the after side. Empty hides it."
+          },
+          {
+            "id": "showLabels",
+            "label": "Show labels",
+            "type": "toggle",
+            "default": true
+          }
+        ]
+      },
+      {
+        "label": "Divider",
+        "fields": [
+          {
+            "id": "splitPosition",
+            "label": "Split position",
+            "type": "slider",
+            "default": 0.5,
+            "min": 0.1,
+            "max": 0.9,
+            "step": 0.01,
+            "description": "Resting position of the divider, 0 = far left, 1 = far right. In pointer mode the pointer drives it; this is the default and the reduced-motion rest point."
+          },
+          {
+            "id": "splitAngle",
+            "label": "Split angle",
+            "type": "slider",
+            "default": 0,
+            "min": -30,
+            "max": 30,
+            "step": 0.5,
+            "unit": "\u00b0",
+            "description": "Tilt of the divider. 0 = vertical; positive leans the top to the right for a diagonal split."
+          },
+          {
+            "id": "refractionStrength",
+            "label": "Edge refraction",
+            "type": "slider",
+            "default": 1,
+            "min": 0,
+            "max": 2.5,
+            "step": 0.05,
+            "description": "How hard the glass divider bends the scene through it. 1.0 is a believable glass plane; above 1.8 reads hyper-glass."
+          },
+          {
+            "id": "chromaStrength",
+            "label": "Chromatic edge",
+            "type": "slider",
+            "default": 1.1,
+            "min": 0,
+            "max": 3,
+            "step": 0.05,
+            "description": "Per-channel dispersion at the divider \u2014 the prism rim. Around 1.0 is photoreal; higher gives a dichroic edge."
+          },
+          {
+            "id": "handleStyle",
+            "label": "Handle style",
+            "type": "select",
+            "default": "arrows",
+            "options": [
+              {
+                "label": "Arrows",
+                "value": "arrows"
+              },
+              {
+                "label": "Dot",
+                "value": "dot"
+              },
+              {
+                "label": "Line only",
+                "value": "line"
+              }
+            ],
+            "description": "The handle affordance riding the divider."
+          }
+        ]
+      },
+      {
+        "label": "Glow & Light",
+        "fields": [
+          {
+            "id": "glowColor",
+            "label": "Glow color",
+            "type": "color",
+            "default": "#bfe3ff",
+            "description": "Colour of the light bleeding off the glass divider."
+          },
+          {
+            "id": "glowIntensity",
+            "label": "Glow intensity",
+            "type": "slider",
+            "default": 1.1,
+            "min": 0,
+            "max": 2.5,
+            "step": 0.05,
+            "description": "Brightness of the divider glow. 0.8-1.2 reads as lit glass; above 2 blooms heavily."
+          },
+          {
+            "id": "parallaxStrength",
+            "label": "Parallax tilt",
+            "type": "slider",
+            "default": 0,
+            "min": 0,
+            "max": 1,
+            "step": 0.02,
+            "description": "How much the whole plane shears in 3D as the pointer moves. 0 freezes it flat."
+          },
+          {
+            "id": "backgroundTone",
+            "label": "Background tone",
+            "type": "color",
+            "default": "#0b1018",
+            "description": "The deep tone behind the plane, visible at the edges and through the vignette."
+          }
+        ]
+      },
+      {
+        "label": "Typography",
+        "fields": [
+          {
+            "id": "headingFontFamily",
+            "label": "Heading Font",
+            "type": "font",
+            "default": "Inherit",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
