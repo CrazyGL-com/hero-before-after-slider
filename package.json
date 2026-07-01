@@ -1,7 +1,7 @@
 {
 	"name": "@crazygl/hero-before-after-slider",
-	"version": "0.1.0",
-	"description": "Cinematic Before / After Slider — two images or videos blended across a glowing, draggable glass divider with chromatic refraction and parallax.",
+	"version": "0.1.1",
+	"description": "Cinematic Before / After Slider — Two images or videos blended in 3D across a glowing, draggable glass divider. The split refracts the scene with a chromatic edge, the whole plane tilts on pointer parallax, and corner… A customizable CrazyGL animated hero section — WebGL, React, drop-in.",
 	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
@@ -21,7 +21,7 @@
 		"LICENSE"
 	],
 	"dependencies": {
-		"@crazygl/core": "^0.1.0"
+		"@crazygl/core": "^0.1.1"
 	},
 	"peerDependencies": {
 		"react": ">=18",
@@ -36,5 +36,31 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"keywords": [
+		"before-after",
+		"comparison",
+		"glass",
+		"refraction",
+		"slider",
+		"transformation",
+		"premium",
+		"before-after-slider",
+		"crazygl",
+		"hero",
+		"hero-section",
+		"webgl",
+		"react",
+		"animation",
+		"ui",
+		"landing-page",
+		"interactive",
+		"frontend",
+		"component",
+		"canvas",
+		"three"
+	],
+	"bugs": {
+		"url": "https://github.com/crazygl-com/hero-before-after-slider/issues"
 	}
 }

@@ -3,7 +3,7 @@ name: before-after-slider
 description: "Two images or videos blended in 3D across a glowing, draggable glass divider. The split refracts the scene with a chromatic edge, the whole plane tilts on pointer parallax, and corner labels call out before and after — a transformation showcase for AI enhancement, photo and video editing, design tools, and beauty tech."
 metadata:
   author: "@ybouane"
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 ## How To Use This Skill
